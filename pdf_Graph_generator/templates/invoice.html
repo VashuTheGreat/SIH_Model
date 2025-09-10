@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LCA Report</title>
+  <style>
+    body { 
+      font-family: 'Segoe UI', Arial, sans-serif; 
+      margin: 40px; 
+      background: #f9fafc; 
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #34495e;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #7f8c8d;
+    }
+
+    h2 {
+      color: #34495e;
+      border-left: 5px solid #2980b9;
+      padding-left: 10px;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    .info-box {
+      background: #ecf0f1;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      margin-top: 15px; 
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    th, td { 
+      border: 1px solid #dfe6e9; 
+      padding: 10px; 
+      text-align: left; 
+    }
+
+    th { 
+      background: #2980b9; 
+      color: white; 
+      text-transform: uppercase; 
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    tr:nth-child(even) { 
+      background: #f4f6f7; 
+    }
+
+    .chart { 
+      text-align: center; 
+      margin: 25px 0; 
+    }
+
+    .chart img {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 5px;
+      background: white;
+      max-width: 100%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #7f8c8d;
+      margin-top: 50px;
+      padding-top: 15px;
+      border-top: 1px solid #bdc3c7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LCA Report</h1>
+    <p>Generated on {{generated_date}}</p>
+  </header>
+
+  <div class="info-box">
+    <p><strong>Name:</strong> {{ Name }}</p>
+    <p><strong>Company:</strong> {{ company }}</p>
+  </div>
+
+
+
+  <h2>Sample Data Analysis</h2>
+  <table>
+    {% for key, value in sample_data.items() %}
+      <tr>
+        <th>{{ key.replace("_"," ") }}</th>
+        <td>{{ value }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <h2>Charts</h2>
+  {% for chart in charts %}
+    <div class="chart">
+      <img src="data:image/png;base64,{{ chart }}" width="500"/>
+    </div>
+  {% endfor %}
+
+  <footer>
+    <p>Confidential Report | EcoTech Pvt Ltd | Generated automatically</p>
+  </footer>
+</body>
+</html>
