@@ -1,0 +1,9 @@
+.env
+__pycache__/
+final/backend/.env
+final/backend/__pycache__
+final/backend/__pycache__/
+
+final/bhoomipath/.env
+final/bhoomipath/node_modules
+final/bhoomipath/node_modules/
